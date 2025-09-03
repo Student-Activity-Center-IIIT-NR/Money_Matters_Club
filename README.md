@@ -1,6 +1,6 @@
 ## 👋 About Me  
 
-Hi there! I'm **Manas Choudhary**, a passionate web developer and coding enthusiast currently pursuing B.Tech in **Data Science and Artificial Intelligence** at IIIT Naya Raipur.  
+Hi there! I'm **Ayushiiiii Singh**, a passionate web developer and coding enthusiast currently pursuing B.Tech in **Data Science and Artificial Intelligence** at IIIT Naya Raipur.  
 
 🌟 **What I Do:**  
 - Build modern, scalable web applications.  
