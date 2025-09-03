@@ -1,27 +1,29 @@
-import React from 'react'
-import './Member.css'
-import Insta from './Icons/insta.jsx'
-import LinkedIn from './Icons/LinkedIn.jsx'
+import React from "react";
+import "./Member.css";
 
-function App({source, name, position, insta, In}){
+function Member({ source, name, position }) {
   return (
-    <div className='member'>
-      <div className="photo">
-        <img src={source} alt="Photo" />
+    <div className="premium-member-card">
+      <div className="member-image-container">
+        <div className="image-frame">
+          <img src={source} alt={`${name} - ${position}`} />
+          <div className="image-overlay"></div>
+        </div>
+        <div className="member-border"></div>
       </div>
 
-      <div className="details">
-        <h2>{name}</h2>
-
-        <div className="name">
-          <h3>{position}</h3>
-
-          <Insta Link={insta} />
-          <LinkedIn LinkedIn={In} />
+      <div className="member-info">
+        <h3 className="member-name">{name}</h3>
+        <div className="position-badge">
+          <span className="member-position">{position}</span>
         </div>
       </div>
+
+      <div className="member-decoration">
+        <div className="decoration-line"></div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default Member;

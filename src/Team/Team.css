@@ -1,25 +1,280 @@
-.Team{
-    margin: 140px auto;
+/* Premium Team Section */
+.premium-team-section {
+  position: relative;
+  padding: 80px 0;
+  background: transparent;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
 }
 
-.Team h1{
-    text-align: center;
+/* Background Elements */
+.team-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.heading .h1{
-    font-size: 60px;
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+  animation: floatOrb 15s ease-in-out infinite;
 }
 
-.members{
-    padding: 0 8%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  top: 20%;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  left: -150px;
+  animation-delay: 7s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-40px) scale(1.05); }
+}
+
+.grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+/* Header - ALWAYS VISIBLE */
+.team-header {
+  position: relative !important;
+  z-index: 10 !important;
+  text-align: center !important;
+  margin-bottom: 60px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.team-intro {
+  margin-bottom: 40px !important;
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.intro-badge {
+  display: inline-block !important;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%) !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+  padding: 8px 20px !important;
+  border-radius: 30px !important;
+  margin-bottom: 20px !important;
+  backdrop-filter: blur(10px) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.intro-badge span {
+  color: #22c55e !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  display: inline !important;
+  visibility: visible !important;
+}
+
+.section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: white !important;
+  margin: 0 0 16px 0 !important;
+  line-height: 1.2 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+.section-description {
+  color: #9ca3af !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  font-weight: 400 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* Team Grid */
+.team-members-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6%;
+  margin-bottom: 80px;
+}
+
+/* Team Stats - ALWAYS VISIBLE */
+.team-stats {
+  position: relative !important;
+  z-index: 10 !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 60px !important;
+  margin-top: 60px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.stat-card {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.8) 0%, rgba(25, 25, 25, 0.6) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 16px;
+  padding: 24px 32px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.1);
+}
+
+.stat-number {
+  display: block !important;
+  color: #22c55e !important;
+  font-size: 2rem !important;
+  font-weight: 900 !important;
+  margin-bottom: 8px !important;
+  visibility: visible !important;
+}
+
+.stat-label {
+  color: #d1d5db !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  visibility: visible !important;
+}
+
+/* Force all text to be visible */
+.premium-team-section * {
+  box-sizing: border-box;
+}
+
+.premium-team-section h1,
+.premium-team-section h2,
+.premium-team-section h3,
+.premium-team-section h4 {
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.premium-team-section p,
+.premium-team-section span {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Remove all animations that might cause invisibility */
+.premium-team-section.animate-in .team-header,
+.premium-team-section.animate-in .team-stats {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .team-members-grid {
+    padding: 0 4%;
     gap: 30px;
-    margin: 25px auto;
-    justify-content: center;
+  }
+  
+  .team-stats {
+    gap: 40px !important;
+  }
 }
 
-.slick-slider button{
-    background-color: grey;
-    border-radius: 50%;
+@media (max-width: 768px) {
+  .premium-team-section {
+    padding: 80px 0;
+  }
+  
+  .team-members-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0 5%;
+    gap: 24px;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-description {
+    font-size: 1rem !important;
+  }
+  
+  .team-stats {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+  }
+  
+  .stat-card {
+    padding: 20px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-members-grid {
+    grid-template-columns: 1fr;
+    padding: 0 4%;
+  }
+  
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .section-description {
+    font-size: 0.9rem !important;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem !important;
+  }
 }
