@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// Custom Icons (since we're not using external dependencies)
+// --- Custom Icons ---
 const ClipboardIcon = () => (
   <svg
     width="20"
@@ -105,10 +105,9 @@ const LightbulbIcon = () => (
   </svg>
 );
 
-// Premium Bento Grid Item Component
+// --- Grid Item ---
 const PremiumBentoItem = ({ item, index, onHover, isHovered }) => {
   const isLarge = index === 3 || index === 6;
-
   return (
     <div
       className={`premium-bento-item ${isLarge ? "large-item" : ""} ${
@@ -117,21 +116,13 @@ const PremiumBentoItem = ({ item, index, onHover, isHovered }) => {
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
     >
-      {/* Background Image */}
       <div className="item-image-container">
         <img src={item.image} alt={item.title} className="item-image" />
         <div className="image-overlay"></div>
         <div className="green-glow"></div>
       </div>
 
-      {/* Content */}
       <div className="item-content">
-        <div className="item-header">
-          <div className="item-icon">{item.icon}</div>
-          <div className="premium-badge">
-            <span className="badge-text">Premium</span>
-          </div>
-        </div>
 
         <div className="item-text">
           <h3 className="item-title">{item.title}</h3>
@@ -156,7 +147,6 @@ const PremiumBentoItem = ({ item, index, onHover, isHovered }) => {
         </div>
       </div>
 
-      {/* Hover Effects */}
       <div className="hover-border"></div>
       <div className="corner-accents">
         <div className="corner top-left"></div>
@@ -168,7 +158,7 @@ const PremiumBentoItem = ({ item, index, onHover, isHovered }) => {
   );
 };
 
-// Main Bento Grid Component
+// --- Main Component ---
 export default function PremiumBentoGrid() {
   const [hoveredItem, setHoveredItem] = useState(null);
 
@@ -226,7 +216,6 @@ export default function PremiumBentoGrid() {
 
   return (
     <div className="premium-bento-container">
-      {/* Header Section */}
       <div className="bento-header">
         <div className="header-badge">
           <span>Premium Experience</span>
@@ -240,7 +229,6 @@ export default function PremiumBentoGrid() {
         </p>
       </div>
 
-      {/* Bento Grid */}
       <div className="premium-bento-grid">
         {items.map((item, index) => (
           <PremiumBentoItem
@@ -253,7 +241,6 @@ export default function PremiumBentoGrid() {
         ))}
       </div>
 
-      {/* Footer CTA */}
       <div className="bento-footer">
         <button className="premium-cta">
           <span>Explore All Premium Content</span>
@@ -261,422 +248,33 @@ export default function PremiumBentoGrid() {
         </button>
       </div>
 
+      {/* --- Styles --- */}
       <style>{`
-        .premium-bento-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 80px 24px;
-          background: transparent;
-          min-height: auto;
-        }
-
-        .bento-header {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-
-        .header-badge {
-          display: inline-block;
-          background: linear-gradient(
-            135deg,
-            rgba(34, 197, 94, 0.2) 0%,
-            rgba(16, 185, 129, 0.2) 100%
-          );
-          border: 1px solid rgba(34, 197, 94, 0.3);
-          padding: 8px 20px;
-          border-radius: 50px;
-          margin-bottom: 24px;
-          backdrop-filter: blur(10px);
-        }
-
-        .header-badge span {
-          color: #22c55e;
-          font-size: 14px;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .main-title {
-          font-size: 4rem;
-          font-weight: 900;
-          color: white;
-          margin-bottom: 20px;
-          line-height: 1.1;
-        }
-
-        .title-accent {
-          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .main-subtitle {
-          font-size: 1.25rem;
-          color: #9ca3af;
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
-        }
-
-        .premium-bento-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 24px;
-          margin-bottom: 60px;
-        }
-
-        .premium-bento-item {
-          position: relative;
-          height: 320px;
-          background: linear-gradient(
-            135deg,
-            rgba(15, 15, 15, 0.9) 0%,
-            rgba(25, 25, 25, 0.9) 100%
-          );
-          border: 1px solid rgba(34, 197, 94, 0.1);
-          border-radius: 20px;
-          overflow: hidden;
-          cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          backdrop-filter: blur(20px);
-        }
-
-        .premium-bento-item.large-item {
-          grid-column: span 2;
-          height: 380px;
-        }
-
-        .premium-bento-item:hover {
-          transform: translateY(-8px) scale(1.02);
-          border-color: rgba(34, 197, 94, 0.4);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
-            0 0 60px rgba(34, 197, 94, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .item-image-container {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 1;
-        }
-
-        .item-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.6s ease;
-        }
-
-        .premium-bento-item:hover .item-image {
-          transform: scale(1.1);
-        }
-
-        .image-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.7) 0%,
-            rgba(0, 0, 0, 0.4) 50%,
-            rgba(34, 197, 94, 0.1) 100%
-          );
-          transition: opacity 0.3s ease;
-        }
-
-        .premium-bento-item:hover .image-overlay {
-          background: linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.8) 0%,
-            rgba(0, 0, 0, 0.5) 50%,
-            rgba(34, 197, 94, 0.2) 100%
-          );
-        }
-
-        .green-glow {
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          right: -50%;
-          bottom: -50%;
-          background: radial-gradient(
-            circle,
-            rgba(34, 197, 94, 0.1) 0%,
-            transparent 70%
-          );
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-
-        .premium-bento-item:hover .green-glow {
-          opacity: 1;
-        }
-
-        .item-content {
-          position: relative;
-          z-index: 2;
-          height: 100%;
-          padding: 24px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-
-        .item-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 16px;
-        }
-
-        .item-icon {
-          width: 48px;
-          height: 48px;
-          background: rgba(34, 197, 94, 0.1);
-          border: 1px solid rgba(34, 197, 94, 0.3);
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #22c55e;
-          transition: all 0.3s ease;
-        }
-
-        .premium-bento-item:hover .item-icon {
-          background: rgba(34, 197, 94, 0.2);
-          border-color: #22c55e;
-          box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
-        }
-
-        .premium-badge {
-          background: linear-gradient(
-            135deg,
-            rgba(34, 197, 94, 0.8) 0%,
-            rgba(16, 185, 129, 0.8) 100%
-          );
-          padding: 4px 12px;
-          border-radius: 20px;
-          backdrop-filter: blur(10px);
-        }
-
-        .badge-text {
-          color: black;
-          font-size: 12px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        .item-text {
-          flex: 1;
-        }
-
-        .item-title {
-          font-size: 1.5rem;
-          font-weight: 800;
-          color: white;
-          margin-bottom: 12px;
-          line-height: 1.3;
-        }
-
-        .large-item .item-title {
-          font-size: 1.8rem;
-        }
-
-        .item-description {
-          color: #d1d5db;
-          font-size: 0.95rem;
-          line-height: 1.6;
-          margin-bottom: 20px;
-        }
-
-        .large-item .item-description {
-          font-size: 1.05rem;
-        }
-
-        .item-footer {
-          margin-top: auto;
-        }
-
-        .learn-more {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          color: #22c55e;
-          font-weight: 600;
-          font-size: 0.9rem;
-          opacity: 0;
-          transform: translateY(10px);
-          transition: all 0.3s ease;
-        }
-
-        .premium-bento-item:hover .learn-more {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .hover-border {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border: 2px solid transparent;
-          border-radius: 20px;
-          background: linear-gradient(
-            135deg,
-            rgba(34, 197, 94, 0.3),
-            rgba(16, 185, 129, 0.3)
-          );
-          background-clip: padding-box;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          z-index: 3;
-          pointer-events: none;
-        }
-
-        .premium-bento-item:hover .hover-border {
-          opacity: 1;
-        }
-
-        .corner-accents {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 4;
-          pointer-events: none;
-        }
-
-        .corner {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          border: 2px solid #22c55e;
-          opacity: 0;
-          transition: all 0.4s ease;
-        }
-
-        .corner.top-left {
-          top: 15px;
-          left: 15px;
-          border-right: none;
-          border-bottom: none;
-          border-top-left-radius: 8px;
-        }
-
-        .corner.top-right {
-          top: 15px;
-          right: 15px;
-          border-left: none;
-          border-bottom: none;
-          border-top-right-radius: 8px;
-        }
-
-        .corner.bottom-left {
-          bottom: 15px;
-          left: 15px;
-          border-right: none;
-          border-top: none;
-          border-bottom-left-radius: 8px;
-        }
-
-        .corner.bottom-right {
-          bottom: 15px;
-          right: 15px;
-          border-left: none;
-          border-top: none;
-          border-bottom-right-radius: 8px;
-        }
-
-        .premium-bento-item:hover .corner {
-          opacity: 1;
-          transform: scale(1.2);
-        }
-
-        .bento-footer {
-          text-align: center;
-        }
-
-        .premium-cta {
-          position: relative;
-          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-          color: black;
-          border: none;
-          padding: 18px 48px;
-          border-radius: 50px;
-          font-size: 1.1rem;
-          font-weight: 700;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          overflow: hidden;
-        }
-
-        .premium-cta:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 15px 35px rgba(34, 197, 94, 0.4);
-        }
-
-        .cta-glow {
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          right: -50%;
-          bottom: -50%;
-          background: radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.3) 0%,
-            transparent 70%
-          );
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .premium-cta:hover .cta-glow {
-          opacity: 1;
-        }
-
-        @media (max-width: 1200px) {
-          .premium-bento-grid {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          }
-
-          .main-title {
-            font-size: 3rem;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .premium-bento-container {
-            padding: 40px 16px;
-          }
-
-          .premium-bento-grid {
-            grid-template-columns: 1fr;
-            gap: 16px;
-          }
-
-          .premium-bento-item.large-item {
-            grid-column: span 1;
-            height: 320px;
-          }
-
-          .main-title {
-            font-size: 2.5rem;
-          }
-
-          .main-subtitle {
-            font-size: 1.1rem;
-          }
-        }
+        body { background: #0f0f0f; color: #fff; }
+        .premium-bento-container { max-width: 1400px; margin: 0 auto; padding: 80px 24px; }
+        .bento-header { text-align: center; margin-bottom: 60px; }
+        .header-badge { display: inline-block; background: rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3); padding:8px 20px; border-radius:50px; margin-bottom:24px; }
+        .header-badge span { color:#22c55e; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:1px; }
+        .main-title { font-size:4rem; font-weight:900; margin-bottom:20px; }
+        .title-accent { background:linear-gradient(135deg,#22c55e,#16a34a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .main-subtitle { font-size:1.25rem; color:#9ca3af; max-width:600px; margin:0 auto; line-height:1.6; }
+        .premium-bento-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:24px; margin-bottom:60px; }
+        .premium-bento-item { position:relative; height:320px; background:#111; border:1px solid rgba(34,197,94,0.1); border-radius:20px; overflow:hidden; cursor:pointer; transition:all .4s ease; }
+        .premium-bento-item.large-item { grid-column:span 2; height:380px; }
+        .premium-bento-item:hover { transform:translateY(-8px) scale(1.02); border-color:rgba(34,197,94,0.4); box-shadow:0 20px 40px rgba(0,0,0,.4); }
+        .item-image-container { position:absolute; inset:0; z-index:1; }
+        .item-image { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+        .premium-bento-item:hover .item-image { transform:scale(1.1); }
+        .image-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.55); transition:.3s; }
+        .item-content { position:relative; z-index:2; height:100%; padding:28px; display:flex; flex-direction:column; justify-content:flex-end; background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 60%,transparent 100%); }
+        .item-title { font-size:1.6rem; font-weight:800; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.7); }
+        .item-description { color:#e5e7eb; font-size:1rem; line-height:1.6; text-shadow:0 1px 6px rgba(0,0,0,.6); }
+        .large-item .item-title { font-size:2rem; }
+        .learn-more { opacity:0; transform:translateY(10px); transition:.3s; color:#22c55e; font-weight:600; display:flex; align-items:center; gap:8px; }
+        .premium-bento-item:hover .learn-more { opacity:1; transform:translateY(0); }
+        .premium-cta { background:linear-gradient(135deg,#22c55e,#16a34a); color:#000; padding:18px 48px; border-radius:50px; font-size:1.1rem; font-weight:700; border:none; cursor:pointer; transition:.3s; }
+        .premium-cta:hover { transform:translateY(-2px); box-shadow:0 15px 35px rgba(34,197,94,0.4); }
+        @media(max-width:768px){ .main-title{font-size:2.5rem;} .main-subtitle{font-size:1.1rem;} .premium-bento-grid{grid-template-columns:1fr;} }
       `}</style>
     </div>
   );

@@ -88,7 +88,7 @@ const Team = forwardRef((props, ref) => {
           position="Social Media"
         />
         <Member
-          source="/aggarwal.jpg"
+          source="https://res.cloudinary.com/dapu22gee/image/upload/c_crop,ar_9:16/v1756926855/arpan_b8tuyj.jpg"
           name="Arpan Khakha"
           position="Design & Documentation"
         />
@@ -103,7 +103,7 @@ const Team = forwardRef((props, ref) => {
           position="Marketing"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756924687/gaurav_ra75yd.jpg"
+          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756926821/gaurav1_tvht88.jpg"
           name="Gaurav Singh"
           position="Marketing"
         />
