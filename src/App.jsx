@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Team from "./Team/Team.jsx";
+import Xcelerate from './Xcelerate/Xcelerate.jsx';
 import Navbar from './Home/Navbar/Navbar';
 import Home from './Home/Home.jsx';
 import Events from './Events/Events.jsx';
@@ -11,6 +12,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
   const router = createBrowserRouter([
+    {
+      path: "/xcelerate",
+      element: <Xcelerate />,
+    },
     {
       path: "/Gallery",
       element: (

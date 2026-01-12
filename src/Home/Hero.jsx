@@ -1,4 +1,5 @@
 import "./Hero.css";
+import WHOLETEAM from "../Gallery/WHOLETEAM.jpg";
 import React, { useRef, useState, useEffect } from "react";
 
 function Hero() {
@@ -33,7 +34,16 @@ function Hero() {
   return (
     <div className="premium-hero-main">
       <div className={`premium-hero-section ${isVisible ? "animate-in" : ""}`}>
-        {/* Animated Background Elements */}
+        {/* Background Image Container */}
+        <div className="hero-background-image-container">
+            <div 
+                className="hero-background-image"
+                style={{ backgroundImage: `url(${WHOLETEAM})` }}
+            ></div>
+            <div className="hero-overlay-gradient"></div>
+        </div>
+
+        {/* Animated Background Elements (Subtle) */}
         <div className="hero-background">
           <div className="gradient-orbs">
             <div
@@ -52,14 +62,6 @@ function Hero() {
                 }px)`,
               }}
             ></div>
-            <div
-              className="orb orb-3"
-              style={{
-                transform: `translate(${mousePosition.x * 10}px, ${
-                  mousePosition.y * 10
-                }px)`,
-              }}
-            ></div>
           </div>
           <div className="grid-overlay"></div>
           <div className="particles">
@@ -69,10 +71,9 @@ function Hero() {
           </div>
         </div>
 
-        {/* Main Content Container */}
-        <div className="hero-content-wrapper">
-          {/* Left Content */}
-          <div className="hero-text-content">
+        {/* Main Content Container - Centered */}
+        <div className="hero-content-wrapper centered-layout">
+          <div className="hero-text-content centered-text">
             <div className="welcome-section">
               <div className="welcome-badge">
                 <span className="badge-icon">✨</span>
@@ -139,7 +140,7 @@ function Hero() {
                   strokeWidth="2"
                 >
                   <path d="M12 5v14" />
-                  <path d="M19 12l-7 7-7-7" />
+                  <path d="M19 12l-7 7-7 7" />
                 </svg>
               </button>
             </div>
@@ -159,55 +160,6 @@ function Hero() {
               <div className="stat-item">
                 <span className="stat-number">10+</span>
                 <span className="stat-label">Mentors</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Visual Content */}
-          <div className="hero-visual-content">
-            <div className="visual-container">
-              <div className="main-visual">
-                <img
-                  src="https://res.cloudinary.com/dapu22gee/image/upload/v1756196444/posters/isneobtsbk3e9hvjoxw5.jpg"
-                  alt="Money Matters Visual"
-                  className="hero-theme-image"
-                />
-                <div className="image-glow"></div>
-              </div>
-
-              {/* Floating Cards */}
-              <div className="floating-cards">
-                <div className="float-card card-investment">
-                  <div className="card-icon">📈</div>
-                  <div className="card-content">
-                    <span className="card-title">Smart Investing</span>
-                    <span className="card-desc">Learn market strategies</span>
-                  </div>
-                </div>
-
-                <div className="float-card card-finance">
-                  <div className="card-icon">💰</div>
-                  <div className="card-content">
-                    <span className="card-title">Financial Planning</span>
-                    <span className="card-desc">Build your future</span>
-                  </div>
-                </div>
-
-                <div className="float-card card-education">
-                  <div className="card-icon">🎓</div>
-                  <div className="card-content">
-                    <span className="card-title">Expert Education</span>
-                    <span className="card-desc">World-class learning</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="decorative-elements">
-                <div className="deco-circle circle-1"></div>
-                <div className="deco-circle circle-2"></div>
-                <div className="deco-line line-1"></div>
-                <div className="deco-line line-2"></div>
               </div>
             </div>
           </div>

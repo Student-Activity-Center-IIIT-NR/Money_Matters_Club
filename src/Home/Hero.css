@@ -11,7 +11,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: hidden;
 }
 
@@ -118,6 +118,28 @@
   50% { transform: translateY(-40px); opacity: 1; }
 }
 
+/* Background Image Styling */
+.hero-background-image-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-background-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9; /* Adjust for readability */
+}
+
+.hero-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(5,7,4,0.9), rgba(5,7,4,0.7), rgba(5,7,4,0.9));
+}
+
 /* Main Content */
 .hero-content-wrapper {
   position: relative;
@@ -126,11 +148,37 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 6%;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
+  display: flex;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
+  text-align: center;
+}
+
+.centered-layout {
+  justify-content: center;
+}
+
+.centered-text {
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  transform: translateX(0) !important; /* Override slide-in for center */
+}
+
+/* Override slide-in to fade-in up for center */
+.premium-hero-section.animate-in .centered-text {
+  transform: translateY(0);
+}
+
+.welcome-section,
+.subtitle-section,
+.collaboration-section,
+.collab-header,
+.hero-actions,
+.hero-stats {
+  align-items: center;
+  justify-content: center;
 }
 
 /* Left Content */
@@ -179,7 +227,7 @@
 }
 
 .hero-title {
-  font-family: 'Audiowide', monospace;
+  font-family: 'Space Grotesk', monospace;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 400;
   line-height: 0.9;
@@ -286,7 +334,7 @@
 }
 
 .zerodha-logo {
-  height: 48px;
+  height: 32px;
   width: auto;
   filter: brightness(1.2);
   transition: all 0.3s ease;

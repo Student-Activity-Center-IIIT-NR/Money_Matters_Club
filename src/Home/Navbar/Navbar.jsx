@@ -124,40 +124,6 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Ultra Modern Mobile Menu */}
-        <div className={`ultra-mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
-          <div className="mobile-menu-bg">
-            <div className="mobile-bg-pattern"></div>
-          </div>
-
-          <div className="mobile-nav-content">
-            <div className="mobile-nav-header">
-              <div className="mobile-logo">
-                <span>Money</span>
-                <span className="accent">Matters</span>
-              </div>
-            </div>
-
-            <div className="mobile-nav-items">
-              {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.url}
-                  className={`ultra-mobile-nav-item ${
-                    isActiveRoute(item.url) ? "active" : ""
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  style={{ "--mobile-index": index }}
-                >
-                  <span className="mobile-item-icon">{item.icon}</span>
-                  <span className="mobile-item-text">{item.text}</span>
-                  <div className="mobile-item-arrow">→</div>
-                  <div className="mobile-item-bg"></div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
       </nav>
 
       {/* Enhanced Overlay */}
@@ -167,6 +133,41 @@ function Navbar() {
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
+
+      {/* Ultra Modern Mobile Menu - Moved outside nav for z-index portal effect */}
+      <div className={`ultra-mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
+        <div className="mobile-menu-bg">
+          <div className="mobile-bg-pattern"></div>
+        </div>
+
+        <div className="mobile-nav-content">
+          <div className="mobile-nav-header">
+            <div className="mobile-logo">
+              <span>Money</span>
+              <span className="accent">Matters</span>
+            </div>
+          </div>
+
+          <div className="mobile-nav-items">
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.url}
+                className={`ultra-mobile-nav-item ${
+                  isActiveRoute(item.url) ? "active" : ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{ "--mobile-index": index }}
+              >
+                <span className="mobile-item-icon">{item.icon}</span>
+                <span className="mobile-item-text">{item.text}</span>
+                <div className="mobile-item-arrow">→</div>
+                <div className="mobile-item-bg"></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
     </>
   );
 }
