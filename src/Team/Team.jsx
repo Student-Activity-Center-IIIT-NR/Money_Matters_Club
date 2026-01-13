@@ -4,7 +4,7 @@ import Welcome from "../Small_Components/Welcome.jsx";
 import React, { forwardRef, useState, useEffect } from "react";
 
 // Team Images
-import utsavImg from "../Gallery/Utsav.jpg";
+import utsavImg from "../Gallery/Utsav.JPG";
 import akanshaImg from "../Gallery/Akansha.JPG";
 import praveenImg from "../Gallery/praveen.jpg";
 import dhaneshImg from "../Gallery/Dhanesh.JPG";
@@ -70,10 +70,11 @@ const Team = forwardRef((props, ref) => {
           position="Head"
         />
         <Member
-          source={akanshaImg}
-          name="Aakansha Verma"
+          source={gauravImg}
+          name="Gaurav Singh"
           position="Vice Head"
         />
+        
         <Member
           source={praveenImg}
           name="Praveen Bajpai"
@@ -89,16 +90,8 @@ const Team = forwardRef((props, ref) => {
           name="Srijan Kapoor"
           position="Sponsorship"
         />
-        <Member
-          source={ekanshImg}
-          name="Ekansh Arohi"
-          position="Social Media"
-        />
-        <Member
-          source={kaushalImg}
-          name="Kaushal Singh"
-          position="Social Media"
-        />
+        
+        
         <Member
           source="https://res.cloudinary.com/dapu22gee/image/upload/c_crop,ar_9:16/v1756926855/arpan_b8tuyj.jpg"
           name="Arpan Khakha"
@@ -112,11 +105,6 @@ const Team = forwardRef((props, ref) => {
         <Member
           source={prakritiImg}
           name="Prakriti Thakur"
-          position="Marketing"
-        />
-        <Member
-          source={gauravImg}
-          name="Gaurav Singh"
           position="Marketing"
         />
         <Member
