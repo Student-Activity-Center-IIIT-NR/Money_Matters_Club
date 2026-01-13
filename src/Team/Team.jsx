@@ -4,16 +4,16 @@ import Welcome from "../Small_Components/Welcome.jsx";
 import React, { forwardRef, useState, useEffect } from "react";
 
 // Team Images
-import utsavImg from "../gallery/Utsav'.JPG";
-import akanshaImg from "../gallery/Akansha.JPG";
-import praveenImg from "../gallery/praveen.jpg";
-import dhaneshImg from "../gallery/Dhanesh.JPG";
-import srijanImg from "../gallery/Srijan.JPG";
-import ekanshImg from "../gallery/Ekansh.JPG";
-import kaushalImg from "../gallery/kaushal.JPG";
-import manreetImg from "../gallery/Manreet.JPG";
-import prakritiImg from "../gallery/Prakriti.JPG";
-import gauravImg from "../gallery/gaurav.JPG";
+import utsavImg from "../Gallery/Utsav.jpg";
+import akanshaImg from "../Gallery/Akansha.JPG";
+import praveenImg from "../Gallery/praveen.jpg";
+import dhaneshImg from "../Gallery/Dhanesh.JPG";
+import srijanImg from "../Gallery/Srijan.JPG";
+import ekanshImg from "../Gallery/Ekansh.JPG";
+import kaushalImg from "../Gallery/kaushal.JPG";
+import manreetImg from "../Gallery/Manreet.JPG";
+import prakritiImg from "../Gallery/Prakriti.JPG";
+import gauravImg from "../Gallery/gaurav.JPG";
 
 const Team = forwardRef((props, ref) => {
   const [isVisible, setIsVisible] = useState(false);
