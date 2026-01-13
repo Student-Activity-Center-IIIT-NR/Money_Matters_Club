@@ -69,6 +69,11 @@ const Team = forwardRef((props, ref) => {
           name="Utsav Garg"
           position="Head"
         />
+        <Member
+          source={gauravImg}
+          name="Gaurav Singh"
+          position="Vice Head"
+        />
         
         <Member
           source={praveenImg}
@@ -100,11 +105,6 @@ const Team = forwardRef((props, ref) => {
         <Member
           source={prakritiImg}
           name="Prakriti Thakur"
-          position="Marketing"
-        />
-        <Member
-          source={gauravImg}
-          name="Gaurav Singh"
           position="Marketing"
         />
         <Member
