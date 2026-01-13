@@ -69,11 +69,7 @@ const Team = forwardRef((props, ref) => {
           name="Utsav Garg"
           position="Head"
         />
-        <Member
-          source={akanshaImg}
-          name="Aakansha Verma"
-          position="Vice Head"
-        />
+        
         <Member
           source={praveenImg}
           name="Praveen Bajpai"
@@ -89,16 +85,8 @@ const Team = forwardRef((props, ref) => {
           name="Srijan Kapoor"
           position="Sponsorship"
         />
-        <Member
-          source={ekanshImg}
-          name="Ekansh Arohi"
-          position="Social Media"
-        />
-        <Member
-          source={kaushalImg}
-          name="Kaushal Singh"
-          position="Social Media"
-        />
+        
+        
         <Member
           source="https://res.cloudinary.com/dapu22gee/image/upload/c_crop,ar_9:16/v1756926855/arpan_b8tuyj.jpg"
           name="Arpan Khakha"
