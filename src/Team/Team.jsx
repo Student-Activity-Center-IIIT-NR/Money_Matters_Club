@@ -3,6 +3,18 @@ import Member from "../Small_Components/Member.jsx";
 import Welcome from "../Small_Components/Welcome.jsx";
 import React, { forwardRef, useState, useEffect } from "react";
 
+// Team Images
+import utsavImg from "../gallery/Utsav'.JPG";
+import akanshaImg from "../gallery/Akansha.JPG";
+import praveenImg from "../gallery/praveen.jpg";
+import dhaneshImg from "../gallery/Dhanesh.JPG";
+import srijanImg from "../gallery/Srijan.JPG";
+import ekanshImg from "../gallery/Ekansh.JPG";
+import kaushalImg from "../gallery/kaushal.JPG";
+import manreetImg from "../gallery/Manreet.JPG";
+import prakritiImg from "../gallery/Prakriti.JPG";
+import gauravImg from "../gallery/gaurav.JPG";
+
 const Team = forwardRef((props, ref) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -53,37 +65,37 @@ const Team = forwardRef((props, ref) => {
       {/* Team Grid */}
       <div className="team-members-grid">
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756029227/utsav_q0mzc1.jpg"
+          source={utsavImg}
           name="Utsav Garg"
           position="Head"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756039802/akansha_qqmxae.jpg"
+          source={akanshaImg}
           name="Aakansha Verma"
           position="Vice Head"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756925537/praveen_htygag.jpg"
+          source={praveenImg}
           name="Praveen Bajpai"
           position="Sponsorship"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756040199/dhanesh_g2v0qn.jpg"
+          source={dhaneshImg}
           name="Dhanesh Sharma"
           position="Sponsorship"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756040196/srijan_xf9lxa.jpg"
+          source={srijanImg}
           name="Srijan Kapoor"
           position="Sponsorship"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756040199/ekansh_j8kndz.jpg"
+          source={ekanshImg}
           name="Ekansh Arohi"
           position="Social Media"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756040198/kaushal_v3k7sg.jpg"
+          source={kaushalImg}
           name="Kaushal Singh"
           position="Social Media"
         />
@@ -93,17 +105,17 @@ const Team = forwardRef((props, ref) => {
           position="Design & Documentation"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756040192/manreet_vobuy1.jpg"
+          source={manreetImg}
           name="Manreet Bhatia"
           position="Design & Documentation"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756040358/prakriti_tempau.jpg"
+          source={prakritiImg}
           name="Prakriti Thakur"
           position="Marketing"
         />
         <Member
-          source="https://res.cloudinary.com/dapu22gee/image/upload/v1756926821/gaurav1_tvht88.jpg"
+          source={gauravImg}
           name="Gaurav Singh"
           position="Marketing"
         />
