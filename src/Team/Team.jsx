@@ -4,7 +4,7 @@ import Welcome from "../Small_Components/Welcome.jsx";
 import React, { forwardRef, useState, useEffect } from "react";
 
 // Team Images
-import utsavImg from "../Gallery/Utsav.jpg";
+import utsavImg from "../Gallery/Utsav.JPG";
 import akanshaImg from "../Gallery/Akansha.JPG";
 import praveenImg from "../Gallery/praveen.jpg";
 import dhaneshImg from "../Gallery/Dhanesh.JPG";
