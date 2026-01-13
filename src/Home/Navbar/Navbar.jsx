@@ -49,6 +49,7 @@ function Navbar() {
 
   const navItems = [
     { text: "Home", url: "/", icon: "🏠" },
+    { text: "Xcelerate", url: "/xcelerate", icon: "🚀" },
     { text: "Events", url: "/Events", icon: "📅" },
     { text: "Team", url: "/Team", icon: "👥" },
     { text: "About", url: "/About", icon: "ℹ️" },
