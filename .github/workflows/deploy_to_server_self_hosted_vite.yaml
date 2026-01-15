@@ -1,0 +1,28 @@
+name: Deploy to Server (Self-hosted, Vite)
+
+on:
+  push:
+    branches:
+      - prod/iiitnr
+
+jobs:
+  deploy:
+    name: Deploy on Self-Hosted Server
+    runs-on: self-hosted
+
+    steps:
+      - name: 📦 Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - run: npm ci
+      - run: CI=false npm run build
+
+      - name: 🚀 Deploy build
+        run: |
+          rm -rf /var/www/html/*
+          cp -r dist/* /var/www/html/
