@@ -51,6 +51,22 @@ const Footer = forwardRef((props, ref) => {
                 </a>
               </div>
 
+              <div className="info-item">
+                <span className="info-label">Contact Numbers</span>
+                <a
+                  href="tel:+918640084482"
+                  className="info-value email-link"
+                >
+                  +91 86400 84482 (Utsav Garg)
+                </a>
+                <a
+                  href="tel:+918269210459"
+                  className="info-value email-link"
+                >
+                  +91 82692 10459 (Gaurav Singh)
+                </a>
+              </div>
+
               <div className="social-links-section">
                 <span className="info-label">Follow Us</span>
                 <div className="social-icons-container">
